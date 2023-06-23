@@ -1,20 +1,17 @@
 'use client'
-import { Image, Pagination } from "@mantine/core";
-import { useEffect, useState } from "react";
-import { useAllMovies } from "../hooks/useAllMovies";
+import { Pagination } from "@mantine/core";
+import { usePagination } from "../hooks/usePagination";
 import { Movie } from "../types";
 import MovieCard from "./movie-card";
 
-
-// this interface should be getting type. Look at use client nextjs docs for making data top level
 interface AllMoviesProps {
-
+  data: Movie[]
 }
 
 const AllMovies: React.FC<AllMoviesProps> = ({
+  data,
 }) => {
-  const { movies, totalPages, currentPage, handlePageChange } = useAllMovies(10);
-
+  const { movies, totalPages, currentPage, handlePageChange } = usePagination(data, 10);
   return (
     <div>
       <h1>Ghibli Films</h1>
