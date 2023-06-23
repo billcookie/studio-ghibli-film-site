@@ -1,5 +1,6 @@
 import { Image } from "@mantine/core"
-import { Movie } from "../types"
+import Link from "next/link"
+import { Movie } from "../../types"
 
 
 interface MovieCardProps {
@@ -12,9 +13,11 @@ const MovieCard: React.FC<MovieCardProps> = ({
 
   return (
     <div className=''>
-      <div className=''>
-        <Image src={movie.image} alt={`${movie.title} thumbnail`}/>
-      </div>
+        <Link href={`/movies/${movie.id}`}>
+          <div>
+          <Image src={movie.image} alt={`${movie.title} thumbnail`}/>
+          </div>
+        </Link>
       <div className=''>
         <h3>{movie.title}</h3>
         <p>{movie.release_date}</p>

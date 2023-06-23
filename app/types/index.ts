@@ -11,4 +11,13 @@ export type Movie = {
   original_title_romanised: string,
   release_date: string,
   running_time: string,
+  producer: string,
+  people: Person[]
+}
+
+
+export type Person = {
+  id: string;
+  name: string;
+  // Add more properties as needed
 }

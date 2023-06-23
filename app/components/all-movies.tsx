@@ -2,7 +2,7 @@
 import { Pagination } from "@mantine/core";
 import { usePagination } from "../hooks/usePagination";
 import { Movie } from "../types";
-import MovieCard from "./movie-card";
+import MovieCard from "./cards/movie-card";
 
 interface AllMoviesProps {
   data: Movie[]

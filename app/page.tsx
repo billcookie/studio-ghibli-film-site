@@ -17,7 +17,7 @@ export default async function Home() {
   // console.log('Test Data', data)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className=''>
+      <div className='grid grid-cols-2'>
        <AllMovies data={data}/>
       </div>
     </main>
