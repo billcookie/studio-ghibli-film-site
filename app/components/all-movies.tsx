@@ -13,17 +13,18 @@ const AllMovies: React.FC<AllMoviesProps> = ({
 }) => {
   const { movies, totalPages, currentPage, handlePageChange } = usePagination(data, 10);
   return (
-    <div>
-      <h1>Ghibli Films</h1>
+    <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-16">
       {movies.map((movie, idx) => (
-          <MovieCard key={`${movie.id}-${idx}`} movie={movie} />
+        <MovieCard key={`${movie.id}-${idx}`} movie={movie} />
       ))}
-         <Pagination
+      <div>
+        <Pagination
         total={totalPages}
         value={currentPage}
         onChange={handlePageChange}
         size="lg"
       />
+      </div>
     </div>
   );
 }
