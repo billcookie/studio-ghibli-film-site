@@ -2,6 +2,12 @@ import AllMovies from './components/all-movies';
 import Hero from './components/hero';
 import { Movie } from './types';
 // Index file in Next 13
+
+if(typeof document !== 'undefined') {
+  // you are safe to use the "document" object here
+  console.log(document.location.href);
+}
+
 async function getMovies() {
   const apiUrl = process.env.NEXT_PUBLIC_GHILIBI_API
 

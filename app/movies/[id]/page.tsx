@@ -1,6 +1,5 @@
 import MovieContent from "@/app/components/movie-content"
 import { Movie, Person } from "@/app/types"
-import { NextSeo } from 'next-seo'
 
 
 async function getMovie(movieId: string): Promise<Movie> {
@@ -31,7 +30,6 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
   return (
 
     <div className="">
-
       <div>
       <MovieContent data={movie} />
       </div>

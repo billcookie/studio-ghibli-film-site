@@ -1,9 +1,11 @@
+// 'use client'
+
 import { Image } from "@mantine/core"
 import Link from "next/link"
 import { Movie } from "../../types"
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-AOS.init()
+// import AOS from 'aos'
+// import 'aos/dist/aos.css'
+// AOS.init()
 
 interface MovieCardProps {
   movie: Movie
