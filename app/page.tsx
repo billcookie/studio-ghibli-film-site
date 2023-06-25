@@ -1,4 +1,5 @@
 import AllMovies from './components/all-movies';
+import Hero from './components/hero';
 import { Movie } from './types';
 // Index file in Next 13
 async function getMovies() {
@@ -16,8 +17,9 @@ export default async function Home() {
   const data = await getMovies()
   // console.log('Test Data', data)
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-6 sm:p-24">
-      <div className='grid gap-8'>
+    <main className="min-h-screen">
+      <Hero title="Discover Ghibli" image="https://assets-prd.ignimgs.com/2022/07/22/best-studio-ghibli-movies-thumbnail-1658448488868.jpg"/>
+      <div className='grid'>
        <AllMovies data={data}/>
       </div>
     </main>

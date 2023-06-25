@@ -22,7 +22,7 @@ const MovieInfo: React.FC<MovieInfoProps> = ({
 }) => {
   return (
     <section className="p-6 sm:p-12">
-    <div className="blockbg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+    <div className=" text-white blockbg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-900">
       <div className="flex flex-wrap items-center">
         <div className="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
           <Image src={image} alt="Trendy Pants and Shoes"
@@ -42,15 +42,15 @@ const MovieInfo: React.FC<MovieInfoProps> = ({
            { people && <ul>
               {people?.map((person, idx) => {
                 return (
-                  <li className="mb-6 text-neutral-500 dark:text-neutral-300" key={person.id}>{person.name}</li>
+                  <li className="mb-6 text-white" key={person.id}>{person.name}</li>
                 )
               })}
             </ul>
             }
-            <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-              Running Time: {running_time}
+            <p className="mb-6 text-white">
+              Running Time: {running_time} minutes
             </p>
-            <p className="mb-6 text-neutral-500 dark:text-neutral-300">
+            <p className="mb-6 text-white">
               Release Date: {release_date}
             </p>
           </div>

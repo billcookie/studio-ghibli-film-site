@@ -1,9 +1,9 @@
 
 
 interface HeroProps {
-  image: string,
-  title: string,
-  original_title: string,
+  image?: string,
+  title?: string,
+  original_title?: string,
 }
 
 const Hero: React.FC<HeroProps> = ({
@@ -21,7 +21,7 @@ const Hero: React.FC<HeroProps> = ({
         <div className="flex h-full items-center justify-center">
           <div className="px-6 text-center text-white md:px-12">
             <h1 className="mt-2 mb-16 text-4xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-              {title}<br /><span>({original_title})</span>
+              {title}<br />{original_title && <span>({original_title})</span>}
             </h1>
           </div>
         </div>

@@ -1,10 +1,10 @@
 'use client'
-import { Pagination } from "@mantine/core";
-import { usePagination } from "../hooks/usePagination";
-import { Movie } from "../types";
-import MovieCard from "./cards/movie-card";
-import { useState } from "react";
-import { Input } from "@mantine/core";
+import { Pagination } from "@mantine/core"
+import { usePagination } from "../hooks/usePagination"
+import { Movie } from "../types"
+import MovieCard from "./cards/movie-card"
+import { useState } from "react"
+import TextWithImageBlock from "./text-with-image-block"
 
 interface AllMoviesProps {
   data: Movie[]
@@ -32,18 +32,13 @@ const AllMovies: React.FC<AllMoviesProps> = ({
   );
   return (
     <>
+      <TextWithImageBlock searchQuery={searchQuery} handleSearchInput={handleSearchInput}/>
       <div className="mb-4">
-        <Input
-          placeholder="Search movies..."
-          value={searchQuery}
-          onChange={handleSearchInput}
-        />
       </div>
       <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-16">
         {filteredMovies.map((movie, idx) => (
           <MovieCard key={`${movie.id}-${idx}`} movie={movie} />
         ))}
-
       </div>
       <div>
         <Pagination
@@ -51,6 +46,7 @@ const AllMovies: React.FC<AllMoviesProps> = ({
           value={currentPage}
           onChange={handlePageChange}
           size="lg"
+          className="mb-4 hover:text-amber-700 transition-all ease duration-300"
         />
       </div>
     </>

@@ -1,5 +1,7 @@
-import MovieContent from "@/app/components/movie-content";
-import { Movie, Person } from "@/app/types";
+import MovieContent from "@/app/components/movie-content"
+import { Movie, Person } from "@/app/types"
+import { NextSeo } from 'next-seo'
+
 
 async function getMovie(movieId: string): Promise<Movie> {
   const apiUrl = `${process.env.NEXT_PUBLIC_GHILIBI_API}/${movieId}`;
@@ -27,6 +29,7 @@ async function getMovie(movieId: string): Promise<Movie> {
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movie = await getMovie(params.id)
   return (
+
     <div className="">
 
       <div>
