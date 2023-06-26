@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# 🏯 Ghibliography
+
+A website that has the filmography of Studio Ghibli.
+
+<br>
+App home: https://ghibliography.vercel.app/
 
 ## Getting Started
 
-First, run the development server:
+<br>
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+
+First, check that the env files are present for `NEXT_PUBLIC_GHILIBI_API` and that these are ignored in git.
+
+Second, run the development server:
 
 ```bash
 npm run dev
@@ -17,6 +29,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Cypress Testing 
+
+Can be run by running the `npx cypress open` add more tests if necessary.
 
 ## Learn More
 
