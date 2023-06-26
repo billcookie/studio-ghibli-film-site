@@ -1,7 +1,10 @@
 import MovieContent from "@/app/components/movie-content"
 import { Movie, Person } from "@/app/types"
-import Head from "next/head";
 
+export const metadata = {
+  title: 'TEST',
+  description: 'Ghibliography: Unleash the Magic: Dive into the world of Studio Ghibli',
+}
 
 async function getMovie(movieId: string): Promise<Movie> {
   const apiUrl = `${process.env.NEXT_PUBLIC_GHILIBI_API}/${movieId}`;
@@ -28,14 +31,10 @@ async function getMovie(movieId: string): Promise<Movie> {
 }
 export default async function MoviePage({ params }: { params: { id: string } }) {
   const movie = await getMovie(params.id)
+
   return (
 
     <div className="">
-      <Head>
-        <title>My Page Title</title>
-        <meta name="description" content="This is my page description." />
-        {/* Add other meta tags or customizations */}
-      </Head>
       <div>
       <MovieContent data={movie} />
       </div>

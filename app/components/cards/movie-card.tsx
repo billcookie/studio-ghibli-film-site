@@ -2,6 +2,7 @@
 import { Image } from "@mantine/core"
 import Link from "next/link"
 import { Movie } from "../../types"
+import {BiSolidTimeFive} from 'react-icons/bi'
 // import AOS from 'aos'
 // import 'aos/dist/aos.css'
 // AOS.init()
@@ -33,8 +34,8 @@ const MovieCard: React.FC<MovieCardProps> = ({
             <div className="px-4 py-2 mt-2 bg-white">
               <div>
                 <h2 className="font-bold text-2xl text-gray-800">{title}</h2>
-                <p className="text-xs text-gray-800">Running Time: {running_time} minutes</p>
-                <p className="text-xs text-gray-800">Release Date: {release_date}</p>
+                <p className="flex items-center gap-2 text-xs text-gray-800"><span><BiSolidTimeFive /></span>Running Time: {running_time} minutes</p>
+                <p className="flex items-center gap-2 text-xs text-gray-800"><span><BiSolidTimeFive /></span>Release Date: {release_date}</p>
 
               </div>
               <p className="sm:text-sm text-xs text-gray-700 px-2 mr-1 my-3 line-clamp-2">

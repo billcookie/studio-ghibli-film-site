@@ -1,5 +1,6 @@
 'use client'
 import { Image, Input } from "@mantine/core"
+import { BsSearch } from 'react-icons/bs'
 
 interface TextWithImageBlockProps {
   text?: string,
@@ -24,11 +25,12 @@ const TextWithImageBlock: React.FC<TextWithImageBlockProps> = ({
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Unleash the Magic: Dive into the world of Studio Ghibli</h2>
           <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Explore the enchanting world of Studio Ghibli movies and easily find the films you&rsquo;re looking for. Our filmography database contains a wide range of beloved Ghibli films, including classics like &quot;Spirited Away,&quot; &quot;My Neighbor Totoro,&quot; and &quot;Princess Mononoke.&quot;</p>
           <Input
-          placeholder="Search movies by title..."
-          value={searchQuery}
-          onChange={handleSearchInput}
-          className=""
-        />
+            placeholder="Search movies by title..."
+            icon={<BsSearch size="1rem" />}
+            value={searchQuery}
+            onChange={handleSearchInput}
+            className=""
+          />
         </div>
       </div>
     </section>
