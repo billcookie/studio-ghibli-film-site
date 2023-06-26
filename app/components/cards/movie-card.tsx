@@ -1,5 +1,4 @@
 // 'use client'
-
 import { Image } from "@mantine/core"
 import Link from "next/link"
 import { Movie } from "../../types"

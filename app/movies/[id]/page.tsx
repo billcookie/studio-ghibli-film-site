@@ -1,5 +1,6 @@
 import MovieContent from "@/app/components/movie-content"
 import { Movie, Person } from "@/app/types"
+import Head from "next/head";
 
 
 async function getMovie(movieId: string): Promise<Movie> {
@@ -30,6 +31,11 @@ export default async function MoviePage({ params }: { params: { id: string } }) 
   return (
 
     <div className="">
+      <Head>
+        <title>My Page Title</title>
+        <meta name="description" content="This is my page description." />
+        {/* Add other meta tags or customizations */}
+      </Head>
       <div>
       <MovieContent data={movie} />
       </div>
