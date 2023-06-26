@@ -17,7 +17,6 @@ export type Movie = {
 
 
 export type Person = {
-  id: string;
-  name: string;
-  // Add more properties as needed
+  id: string
+  name: string
 }
