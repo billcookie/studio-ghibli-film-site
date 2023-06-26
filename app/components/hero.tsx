@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({
         <div className="flex h-full items-center justify-center">
           {hasButton &&
             <Link className="self-end" href='/'>
-              <button className=" bg-gray-600 hover:bg-amber-700 transition-all ease duration-300 text-white font-bold py-2 px-4 rounded">
+              <button className=" bg-gray-600 hover:bg-amber-700 transition-all ease duration-300 text-white font-bold py-2 px-4">
                 Home
               </button>
             </Link>}

@@ -21,7 +21,7 @@ const MovieContent: React.FC<MovieProps> = ({
     producer,
     release_date,
     running_time,
-    people
+    people,
 
   } = data
 
@@ -38,6 +38,7 @@ const MovieContent: React.FC<MovieProps> = ({
           people={people}
           release_date={release_date}
           running_time={running_time}
+          original_title_romanised={original_title_romanised}
         />
       </div>
     </div>

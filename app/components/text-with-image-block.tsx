@@ -29,7 +29,6 @@ const TextWithImageBlock: React.FC<TextWithImageBlockProps> = ({
             icon={<BsSearch size="1rem" />}
             value={searchQuery}
             onChange={handleSearchInput}
-            className=""
           />
         </div>
       </div>

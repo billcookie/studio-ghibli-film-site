@@ -13,6 +13,7 @@ interface MovieInfoProps {
   people?: Person[],
   release_date: string,
   running_time: string,
+  original_title_romanised: string,
 }
 
 const MovieInfo: React.FC<MovieInfoProps> = ({
@@ -22,8 +23,10 @@ const MovieInfo: React.FC<MovieInfoProps> = ({
   description,
   people,
   release_date,
-  running_time
+  running_time,
+  original_title_romanised,
 }) => {
+  console.log('people', people)
   return (
     <section className="p-6 sm:p-12">
       <div className=" text-white blockbg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] bg-gray-900">
@@ -45,11 +48,11 @@ const MovieInfo: React.FC<MovieInfoProps> = ({
               </p>
               {people &&
                 <div className="flex flex-col gap-2">
-                  <h3 className="pb-2">List of Characters:</h3>
+                  <h3 className="pb-2">List of Characters from {original_title_romanised}:</h3>
                   <ul className="flex flex-wrap-reverse gap-2">
                     {people?.map((person, idx) => {
                       return (
-                        <li className="mb-6 text-white" key={person.id}>{person.name},</li>
+                        <li className="mb-6 text-white" key={`${person.id} + ${idx}`}>{person.name},</li>
                       )
                     })}
                   </ul>
