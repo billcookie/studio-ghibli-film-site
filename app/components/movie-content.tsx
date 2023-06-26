@@ -28,7 +28,7 @@ const MovieContent: React.FC<MovieProps> = ({
   // console.log('people', people)
   return (
     <div>
-      <Hero title={title} original_title={original_title} image={image} />
+      <Hero title={title} original_title={original_title} image={image} hasButton={true} />
       <div>
         <MovieInfo
           image={image}
@@ -39,8 +39,6 @@ const MovieContent: React.FC<MovieProps> = ({
           release_date={release_date}
           running_time={running_time}
         />
-      </div>
-      <div className="text-black">
       </div>
     </div>
   );

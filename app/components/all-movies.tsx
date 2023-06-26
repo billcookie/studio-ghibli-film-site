@@ -3,8 +3,10 @@ import { Pagination } from "@mantine/core"
 import { usePagination } from "../hooks/usePagination"
 import { Movie } from "../types"
 import MovieCard from "./cards/movie-card"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import TextWithImageBlock from "./text-with-image-block"
+import { initializeAOS } from "../aos"
+
 
 interface AllMoviesProps {
   data: Movie[]
@@ -30,6 +32,10 @@ const AllMovies: React.FC<AllMoviesProps> = ({
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  useEffect(() => {
+    initializeAOS();
+  }, []);
   return (
     <>
       <TextWithImageBlock searchQuery={searchQuery} handleSearchInput={handleSearchInput}/>
