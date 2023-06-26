@@ -21,32 +21,35 @@ const AllMovies: React.FC<AllMoviesProps> = ({
     currentPage,
     handlePageChange,
     handleSearch,
-  } = usePagination(data, 10);
+  } = usePagination(data, 10)
 
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("")
 
   const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-    handleSearch(e.target.value);
-  };
+    setSearchQuery(e.target.value)
+    handleSearch(e.target.value)
+  }
   const filteredMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  )
 
   useEffect(() => {
-    initializeAOS();
-  }, []);
+    initializeAOS()
+  }, [])
   return (
     <>
       <TextWithImageBlock searchQuery={searchQuery} handleSearchInput={handleSearchInput}/>
       <div className="mb-4">
       </div>
-      <div className="grid grid-cols-1 gap-0 sm:grid-cols-2 sm:gap-16">
+      <div className="grid grid-cols-1 gap-0 md:grid-cols-3 sm:grid-cols-2 sm:gap-16">
         {filteredMovies.map((movie, idx) => (
-          <MovieCard key={`${movie.id}-${idx}`} movie={movie} />
+          <div key={`${movie.id}-${idx}`} className="movie-card">
+             <MovieCard movie={movie} />
+          </div>
+
         ))}
       </div>
-      <div>
+      <div className="pagination">
         <Pagination
           total={totalPages}
           value={currentPage}
@@ -56,7 +59,7 @@ const AllMovies: React.FC<AllMoviesProps> = ({
         />
       </div>
     </>
-  );
+  )
 }
 
 export default AllMovies

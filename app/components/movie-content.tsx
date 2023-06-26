@@ -42,7 +42,7 @@ const MovieContent: React.FC<MovieProps> = ({
         />
       </div>
     </div>
-  );
+  )
 }
 
 export default MovieContent
