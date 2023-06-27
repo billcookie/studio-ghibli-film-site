@@ -39,9 +39,7 @@ const AllMovies: React.FC<AllMoviesProps> = ({
   return (
     <>
       <TextWithImageBlock searchQuery={searchQuery} handleSearchInput={handleSearchInput}/>
-      <div className="mb-4">
-      </div>
-      <div className="grid grid-cols-1 gap-0 md:grid-cols-3 sm:grid-cols-2 sm:gap-16">
+      <div className="grid grid-cols-1 gap-0 p-4 lg:p-32 md:grid-cols-2 md:p-16 sm:grid-cols-2 sm:gap-16">
         {filteredMovies.map((movie, idx) => (
           <div key={`${movie.id}-${idx}`} className="movie-card">
              <MovieCard movie={movie} />
